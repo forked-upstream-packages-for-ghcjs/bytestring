@@ -95,6 +95,9 @@ import           Foreign.C.Types
 import qualified Data.ByteString.Builder.Prim.Internal          as P
 import           Data.ByteString.Builder.Prim.Internal.UncheckedShifts
                    ( caseWordSize_32_64 )
+#if defined(ghcjs_HOST_OS)
+import           GHC.Num     (quotRemInteger)
+#endif
 
 # if __GLASGOW_HASKELL__ < 710
 import           GHC.Num     (quotRemInteger)
